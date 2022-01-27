@@ -17,6 +17,7 @@ public interface UserRepository  extends JpaRepository<User,Long>{
 	public List<User> findBySurname(String surname);
 	
 	public List<User> findByPincode(String pincode);
+	public List<User> findByFnameOrSurnameOrPincode(String fname,String surname,String pincode);
 	
 	@Query("update User set deleted=true where id=?1")
 	@Modifying
